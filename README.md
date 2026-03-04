@@ -6,7 +6,7 @@
 
 <p align="center">
   <img width="800"
-       src="https://github.com/user-attachments/assets/4a38ae2d-e809-41ed-881e-fa94af820a17" />
+       src="assets/ssd fig1 readme.png" />
 </p>
 
 > *"In all fictions, each time a man meets diverse alternatives, he chooses one and eliminates the others; in the work of the almost unfathomable Ts'ui Pên, he chooses — simultaneously — all of them."*

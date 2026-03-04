@@ -79,7 +79,8 @@ All commands below run from inside the `bench/` directory. Large models (Llama-3
 
 ### Benchmarks
 
-Use `--all` for full eval across four datasets. `--numseqs` is per-dataset, so `--numseqs 128 --all` runs 128 × 4 = 512 prompts total.
+Use `--all` for full eval across four datasets. Since different data distributions are predictable to varying degrees, the speed of SD/SSD depends a lot on the dataset. Averaging over many prompts from many types of datasets 
+gives an overall picture. `--numseqs` is per-dataset, so `--numseqs 128 --all` runs 128 × 4 = 512 prompts total.
 
 ```bash
 cd bench
@@ -98,7 +99,7 @@ Use `--qwen --size 32` for Qwen models. See `bench/bench.py` for full args. For 
 
 ### Chat
 
-Interactive streaming chat with Llama-3.1 70B. Supports AR, sync SD, and async SD (SSD). Pass `--metrics` to print token count, speed, and TTFT after each response.
+Interactive streaming chat with Llama-3.1 70B only. Supports AR, sync SD, and async SD (SSD). Pass `--metrics` to print token count, speed, and TTFT after each response.
 
 ```bash
 cd bench
@@ -113,10 +114,23 @@ python -O chat.py --ssd --spec --k 6 --gpus 4
 python -O chat.py --ssd --spec --async --k 7 --f 3 --gpus 5 --metrics
 ```
 
-SGLang and vLLM chat backends are also supported (launches their servers automatically):
+SGLang and vLLM chat backends are also supported (launches their servers automatically) for comparison:
 
 ```bash
 python -O chat.py --sglang        # spec decode
 python -O chat.py --sglang --ar   # autoregressive
 python -O chat.py --vllm          # spec decode
 ```
+
+### Roadmap
+
+Features that will be supported in the near future: 
+- Draft data parallel (increase speculation cache size) on up to 4 devices to avoid getting compute bound
+- OpenAI-compatible inference over HTTP
+- New models and MoE support: GPT-OSS and Kimi-K2.5.
+
+Contributions welcome! 
+
+## History 
+
+[![Star History Chart](https://api.star-history.com/svg?repos=tanishqkumar/ssd&type=Date)](https://star-history.com/#tanishqkumar/ssd&Date)

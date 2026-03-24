@@ -121,7 +121,7 @@ def initialize_wandb(args, run_name):
         return
 
     wandb.init(
-        project="ssd",
+        project="SSD",
         name=run_name,
         group=args.group,
         config={
@@ -139,7 +139,7 @@ def initialize_wandb(args, run_name):
             "input_len": args.input_len,
             "output_len": args.output_len,
             "numseqs": args.numseqs,
-            "draft_model": args.draft,
+            "draft_model": args.draft,  
             "b": args.b,
             "block_size": args.block_sz,
             "eager": args.eager,

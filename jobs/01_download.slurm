@@ -8,8 +8,8 @@
 #SBATCH --mem=32G
 #SBATCH --time=1:00:00
 #SBATCH --job-name=ssd-download
-#SBATCH --output=ssd-download-%j.out
-#SBATCH --error=ssd-download-%j.err
+#SBATCH --output=ssd-download.out
+#SBATCH --error=ssd-download.err
 
 # Downloads only Llama-8B + Llama-1B (draft) to scratch.
 # Total ≈ 18.5 GB. Datasets already downloaded.

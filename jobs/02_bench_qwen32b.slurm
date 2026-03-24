@@ -6,9 +6,9 @@
 #SBATCH --cpus-per-task=48
 #SBATCH --mem=240G
 #SBATCH --time=6:00:00
-#SBATCH --job-name=ssd-qwen32b
-#SBATCH --output=ssd-qwen32b-%j.out
-#SBATCH --error=ssd-qwen32b-%j.err
+#SBATCH --job-name=ssd-qwen
+#SBATCH --output=ssd-qwen.out
+#SBATCH --error=ssd-qwen.err
 
 # Qwen3-32B benchmarks on 4× A100-40GB (160 GB VRAM total).
 #

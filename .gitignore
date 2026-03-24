@@ -44,3 +44,5 @@ summaries/
 # Temporary / scratch
 tmp/
 tmp*/
+
+confidential.txt
